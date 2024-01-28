@@ -10,7 +10,9 @@ module.exports = {
 
     },
     fontFamily: {
-      marker: ["Permanent Marker", "cursive"]
+      marker: ["Permanent Marker", "cursive"],
+      ubuntu: ["Ubuntu", "sans-serif"],
+      bebas: ["Bebas Neue", "sans-serif"]
     }
   },
   plugins: [],
