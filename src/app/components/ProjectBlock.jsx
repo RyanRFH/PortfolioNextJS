@@ -6,24 +6,50 @@ import { Carousel } from 'flowbite-react';
 const ProjectBlock = (props) => {
     return (
 
-        <div>
+        <div className='w-full mt-[10px]'>
             <div>
-                <div className="h-44 m-[5px]">
-                    <Carousel slide={false}>
-                        <img className='h-full' src="https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg" alt="..." />
-                        <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/07/top-20-small-dog-breeds.jpeg.jpg" alt="..." />
-                    </Carousel>
+                <div className='flex items-center justify-center'>
+                    <h1 className='font-bebas text-2xl bg-yellow-200 p-[10px] rounded-lg'>{props.projectName}</h1>
                 </div>
 
-                <h1 className='font-bebas text-2xl'>{props.projectName}</h1>
-                <p>{props.projectDesc}</p>
-                <div className='mt-[20px]'>
+                <div className="h-44 m-[5px]">
+                    <Carousel slide={false}>
+                        {props.projectImages.map((image, index) => {
+                            return (
+                                <img key={index} className='h-full' src={image.url} alt={image.alt} />
+                            )
+                        })}
+                    </Carousel>
+                </div>
+                <div className='flex justify-around mb-[10px]'>
+                    <a href={props.projectApp} target='_blank'>
+                        <button>
+                            <p className='mr-[10px]' href="/projects">App</p>
+                            <img className='w-[30px]' src='../external-link.svg' alt='link'/>
+                        </button>
+                    </a>
+
+                    <a href={props.projectCode} target='_blank'>
+                        <button>
+                            <p className='mr-[10px]' href="/projects">Code</p>
+                            <img className='w-[30px]' src='../external-link.svg' alt='link'/>
+                        </button>
+                    </a>
+
+                </div>
+
+                <div className='mx-[10px] font-ubuntu italic my-[30px]'>
+                    <p>{props.projectDesc}</p>
+                </div>
+
+
+                <div className='mt-[20px] lg:mx-[300px] font-ubuntu'>
                     <div>{props.projectTech.map((tech, index) => {
                         return (
 
-                            <div key={index} className='grid grid-cols-2 mb-[20px] bg-blue-300'>
-                                <p className='flex justify-center items-center'>{tech.name}</p>
-                                <p>{tech.desc}</p>
+                            <div key={index} className='mb-[20px] pb-[10px] bg-blue-200'>
+                                <p className='flex justify-center items-center font-bebas pt-[5px] bg-blue-300'>{tech.name}</p>
+                                <p className='text-center'>{tech.desc}</p>
                             </div>
                         )
                     })}</div>

@@ -17,13 +17,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
       </head>
-      <body className="w-screen min-h-screen">
+      <body>
         
         <Navbar />
         {children}
-        <div className="">
-          <Footer className=""/>
-        </div>
+        <Footer/>
 
       </body>
     </html>

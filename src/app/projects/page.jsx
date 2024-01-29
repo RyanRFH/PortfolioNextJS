@@ -1,29 +1,25 @@
-import ProjectBlock from "../components/ProjectBlock";
+import React from 'react';
+import ProjectThumbnail from '../components/ProjectThumbnail';
 
-export default function Projects() {
+const page = () => {
     return (
+        <div className="mt-[80px] ml-[5px] lg:ml-[100px] lg:min-h-[590px] mb-[50px]">
+            <h1 className="text-6xl font-bebas text-blue-700 lg:text-8xl">Projects</h1>
+            <div className='mt-[50px] flex justify-evenly flex-wrap'>
+                <ProjectThumbnail projName="Portfolio (NextJS)" projImg="portfolio-home.png" projLink="/projects/portfolio-nextjs" />
+                <ProjectThumbnail projName="MusiKa (React)" projImg="portfolio-home.png" projLink="/projects/"/>
+                <ProjectThumbnail projName="3D Portfolio (ThreeJS)" projImg="portfolio-home.png" projLink="/projects/"/>
+                <ProjectThumbnail projName="Cats4Lyfe (React)" projImg="portfolio-home.png" projLink="/projects/"/>
+                <ProjectThumbnail projName="Weather Checker (React)" projImg="portfolio-home.png" projLink="/projects/"/>
+                <ProjectThumbnail projName="Test Driven Development" projImg="portfolio-home.png" projLink="/projects/"/>
+                <ProjectThumbnail projName="To Do List (React)" projImg="portfolio-home.png" projLink="/projects/"/>
+                <ProjectThumbnail projName="Calculator (React)" projImg="portfolio-home.png" projLink="/projects/"/>
+                <ProjectThumbnail projName="Dice Game (React)" projImg="portfolio-home.png" projLink="/projects/"/>
+                <ProjectThumbnail projName="Backend (MERN)" projImg="portfolio-home.png" projLink="/projects/"/>
+            </div>
 
-        <div className="min-h-screen">
-            {/* Portfolio (NextJS) */}
-            <ProjectBlock
-                projectName="Portfolio (NextJS)"
-                projectDesc="I used this project as an opportunity to learn how to use a few new bits of technology."
-                projectTech={[
-                    {
-                        name: "NextJS",
-                        desc: "NextJS is a React framework, I decided to learn it in order to expand my capabilities with React and to see if I enjoyed using as a development enviroment."
-                    },
-                    {
-                        name: "TailwindCSS",
-                        desc: "Tailwind is a CSS framework designed to speed up the styling process, I decided to learn this in order to develop my CSS abilities and because a lot of companies are using CSS frameworks"
-                    },
-                    {
-                        name: "Flowbite",
-                        desc: "Flowbite is an addon to Tailwind that includes a component library, useful for adding things like image sliders and modals"
-                    },
-
-                ]}
-            />
         </div>
     );
-}
+};
+
+export default page;

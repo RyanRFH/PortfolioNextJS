@@ -9,3 +9,7 @@ body {
   background: #ebf0fa;
   /* @apply text-white */
 }
+
+button {
+  @apply hover:text-blue-600 mt-[20px] h-[50px] w-[130px] bg-blue-500 text-3xl font-bebas flex justify-center items-center rounded-2xl text-blue-100;
+}

@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div className="mt-[80px] ml-[10px] lg:ml-[100px]">
-      <h1 className="text-6xl font-bebas">About Me</h1>
+    <div className="mt-[80px] ml-[10px] lg:ml-[100px] lg:min-h-[590px]">
+      <h1 className="text-6xl font-bebas text-blue-700">About Me</h1>
       <div className="mt-[20px] ml-[10px] text-xl font-ubuntu mr-[20px]">
         <p className="text-2xl">Hi</p>
         <p className="mt-[10px] mb-[10px]">My name is Ryan</p>
@@ -20,9 +20,9 @@ export default function Home() {
           
         </div>
       </div>
-      <div className="mb-[60px] hover:text-blue-200 mt-[20px] h-[60px] w-[200px] bg-blue-500 text-4xl font-bebas flex justify-center items-center rounded-2xl text-blue-100">
+      <button className="w-[200px] mb-[20px]">
         <a href="/projects">My Projects</a>
-      </div>
+      </button>
 
 
     </div>
