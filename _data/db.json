@@ -1,0 +1,139 @@
+{
+    "projects": [
+        {
+            "id": "1",
+            "projectName": "Portfolio (NextJS)",
+            "projectDesc": "My portfolio for storing information and links to my projects. I used this project as an opportunity to learn a few new frameworks.",
+            "projectApp": "https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjty_-V7IKEAxWkgf0HHXV6CHcQPAgJ",
+            "projectCode": "https://github.com/RyanRFH/PortfolioNextJS",
+            "projectTech": [
+                {
+                    "name": "NextJS",
+                    "desc": "NextJS is a React framework, I decided to learn it to expand my capabilities with React and to see if I enjoyed using it as a development enviroment."
+                },
+                {
+                    "name": "TailwindCSS",
+                    "desc": "Tailwind is a CSS framework designed to speed up the styling process, I decided to learn this to develop my CSS abilities and because a lot of modern apps use CSS frameworks"
+                },
+                {
+                    "name": "Material Tailwind",
+                    "desc": "Material Tailwind is an addon to Tailwind that includes a component library, useful for adding things like image sliders and modals"
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../portfolio-home.png",
+                    "alt": "img1"
+                },
+                {
+                    "url": "../portfolio-project-selection.png",
+                    "alt": "img2"
+                },
+                {
+                    "url": "../portfolio-project.png",
+                    "alt": "img3"
+                }
+            ]
+        }, {
+            "id": "2",
+            "projectName": "MusiKa",
+            "projectDesc": "A full stack music website including a login system, persistent login, password hashing, Spotify API, a persistent radio player and a home page with music news and events personalized to the user based on their saved favourites",
+            "projectApp": "https://music-app-gamma-lilac.vercel.app/",
+            "projectCode": "https://github.com/zvischvarcz/M49-Music-App-Back-End",
+            "projectTech": [
+                {
+                    "name": "SQL",
+                    "desc": "Used to store user data on MongoDB"
+                },
+                {
+                    "name": "BCrypt",
+                    "desc": "A module used to encrypt data"
+                },
+                {
+                    "name": "Express",
+                    "desc": "Express is a back end web application framework, we used it to build our RESTful APIs"
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../musika-home.png",
+                    "alt": "img1"
+                },
+                {
+                    "url": "../musika-login.png",
+                    "alt": "img2"
+                }
+            ]
+        }, {
+            "id": "3",
+            "projectName": "",
+            "projectDesc": "",
+            "projectApp": "",
+            "projectCode": "",
+            "projectTech": [
+                {
+                    "name": "",
+                    "desc": ""
+                },
+                {
+                    "name": "",
+                    "desc": ""
+                },
+                {
+                    "name": "",
+                    "desc": ""
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "",
+                    "alt": ""
+                },
+                {
+                    "url": "",
+                    "alt": ""
+                }
+            ]
+        }, {
+            "id": "4",
+            "projectName": "Portfolio Game (ThreeJS)",
+            "projectDesc": "This was a personal project with the goal of learning a new and interesting way to create websites.",
+            "projectApp": "https://ryanfosterhill-portfolio.netlify.app/",
+            "projectCode": "https://github.com/RyanRFH/Portfolio3D/blob/main/main.js",
+            "projectTech": [
+                {
+                    "name": "ThreeJS",
+                    "desc": "ThreeJS functions as a game engine and allows animated 3D computer graphics to run in a web browser, requires browser hardware acceleration to run"
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../portfolio3d-home.png",
+                    "alt": "img1"
+                }
+            ]
+        }, {
+            "id": "5",
+            "projectName": "Cats4Lyfe",
+            "projectDesc": "An E-Commerce website, includes searching using various API's to generate fake data, results sorting and a basket system.",
+            "projectApp": "https://cats-app-seven.vercel.app/",
+            "projectCode": "https://github.com/RyanRFH/CatsApp/tree/main/src",
+            "projectTech": [
+                {
+                    "name": "Bootstrap",
+                    "desc": "Bootstrap is a CSS framework, we experimented with it in this project in a few areas, mainly in the navbar"
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../cats-home.png",
+                    "alt": "img1"
+                },
+                {
+                    "url": "../cats-contact.png",
+                    "alt": "img2"
+                }
+            ]
+        }
+    ]
+}

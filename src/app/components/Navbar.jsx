@@ -8,7 +8,7 @@ const Navbar = () => {
                 <h1 className='ml-[10px] lg:text-6xl sm:text-3xl text-3xl'>Ryan Foster-Hill</h1>
             </Link>
 
-            <div className='flex items-center justify-evenly text-3xl lg:text-6xl text-blue-700'>
+            <div className='flex items-center justify-evenly text-3xl lg:text-6xl text-blue-600'>
                 <Link className='hover:text-blue-200' href='/'>Home</Link>
                 <Link className='hover:text-blue-200' href='/projects'>Projects</Link>
             </div>

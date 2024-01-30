@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.8",
     "flowbite": "^2.2.1",
     "flowbite-react": "^0.7.2",
+    "json-server": "^1.0.0-alpha.23",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"

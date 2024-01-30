@@ -4,11 +4,11 @@ import React from 'react';
 const Navbar = () => {
     return (
         <div className='bg-blue-400 h-[130px] w-full'>
-            <h1 className='text-4xl lg:text-6xl lg:ml-[80px] ml-[10px] font-bebas mt-[10px]'>Contact Me</h1>
+            <h1 className='text-4xl lg:text-6xl lg:ml-[80px] ml-[10px] font-bebas pt-[20px]'>Contact Me</h1>
             <div className='flex justify-around font-ubuntu font-bold text-sm flex-col lg:flex-row ml-[10px] lg:text-2xl'>
                 <div className='flex'>
                     <p className='mr-[10px]'>Phone:</p>
-                    <a href='tel:07504666904' className='hover:text-blue-200'>07504666904</a>
+                    <a href='tel:07504666904' className='hover:text-blue-200'>07504 666904</a>
                 </div>
                 <div className='flex'>
                 <p className='mr-[10px]'>Email:</p>
