@@ -1,18 +1,20 @@
-
-
 import React from 'react';
 
 const ProjectThumbnail = (props) => {
     return (
-        <div className='max-w-[800px] mb-[50px]'>
-            <a href={props.projLink} className='w-full pr-[5px] flex items-center justify-center'>
-                <div className='absolute font-bebas text-3xl z-10 lg:text-[80px] bg-blue-600 p-[30px] lg:p-[60px] rounded-2xl'>
-                    <p className='text-blue-200'>{props.projName}</p>
-                </div>
+        <div className='flex flex-col items-center justify-center max-w-[800px] md:min-h-[500px] mb-[30px] md:mb-[50px] py-[20px] md:px-[30px] md:rounded-3xl bg-blue-200 lg:min-w-[800px]'>
+            <div>
+                <a href={props.projLink} className='w-full flex items-center justify-center hover:opacity-60'>
+                    <div className='absolute font-bebas text-3xl z-10 lg:text-[60px] bg-blue-600 py-[10px] px-[20px] lg:p-[30px] rounded-2xl'>
+                        <p className='text-white'>{props.projName}</p>
+                    </div>
 
-                <img src={props.projImg} alt='portfolio-thumbnail' className='opacity-80' />
-            </a>
+                    <img className='max-h-[400px] rounded-3xl' src={props.projImg} alt='portfolio-thumbnail'/>
+                </a>
+            </div>
+            <p className='mx-[10px] font-ubuntu font-bold mt-[10px]'>{props.projDesc}</p>
         </div>
+
     );
 };
 

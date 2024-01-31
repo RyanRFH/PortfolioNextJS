@@ -12,10 +12,22 @@ async function getProject(id) {
     return res.json()
 }
 
+async function getProjects() {
+    //Object argument sets data revalidation time in seconds
+    const res = await fetch(`http://localhost:4000/projects`, {
+        next: {
+            revalidate: 0 //Using 0 opts our of using cache
+        }
+    })
+    return res.json()
+}
+
 //Destructured props to get the params object directly
 const ProjectDetails = async ({ params }) => {
     const id = params.id
     const projectData = await getProject(id)
+    const projects = await getProjects()
+    const projectCount = projects.length
 
     return (
 
@@ -40,6 +52,8 @@ const ProjectDetails = async ({ params }) => {
                     projectApp={projectData.projectApp}
                     projectCode={projectData.projectCode}
                     projectTech={projectData.projectTech}
+                    projectId={id}
+                    projectCount={projectCount}
                 />
             }
 

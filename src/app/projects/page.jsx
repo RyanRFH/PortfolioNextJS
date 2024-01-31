@@ -15,10 +15,8 @@ const page = async () => {
     const projects = await getProjects()
 
     return (
-        <div className="mt-[80px] ml-[5px] lg:ml-[100px] lg:min-h-[590px] mb-[50px]">
-
-
-            <h1 className="text-6xl font-bebas text-blue-700 lg:text-8xl">Projects</h1>
+        <div className="mt-[80px] lg:ml-[100px] mb-[50px]">
+            <h1 className="text-6xl font-bebas text-blue-700 lg:text-8xl ml-[20px]">Projects</h1>
             <div className='mt-[50px] flex justify-evenly flex-wrap'>
 
                 {/* Check if projects are found */}
@@ -29,7 +27,7 @@ const page = async () => {
                 {projects.map((project, index) => {
                     return (
                         <div key={index}>
-                            <ProjectThumbnail projName={project.projectName} projImg={project.projectImages[0].url} projLink={`/projects/${project.id}`}/>
+                            <ProjectThumbnail projDesc={project.projectDesc} projName={project.projectName} projImg={project.projectImages[0].url} projLink={`/projects/${project.id}`}/>
                         </div>
 
                     )

@@ -66,36 +66,6 @@
             ]
         }, {
             "id": "3",
-            "projectName": "",
-            "projectDesc": "",
-            "projectApp": "",
-            "projectCode": "",
-            "projectTech": [
-                {
-                    "name": "",
-                    "desc": ""
-                },
-                {
-                    "name": "",
-                    "desc": ""
-                },
-                {
-                    "name": "",
-                    "desc": ""
-                }
-            ],
-            "projectImages":[
-                {
-                    "url": "",
-                    "alt": ""
-                },
-                {
-                    "url": "",
-                    "alt": ""
-                }
-            ]
-        }, {
-            "id": "4",
             "projectName": "Portfolio Game (ThreeJS)",
             "projectDesc": "This was a personal project with the goal of learning a new and interesting way to create websites.",
             "projectApp": "https://ryanfosterhill-portfolio.netlify.app/",
@@ -113,7 +83,7 @@
                 }
             ]
         }, {
-            "id": "5",
+            "id": "4",
             "projectName": "Cats4Lyfe",
             "projectDesc": "An E-Commerce website, includes searching using various API's to generate fake data, results sorting and a basket system.",
             "projectApp": "https://cats-app-seven.vercel.app/",
@@ -131,6 +101,134 @@
                 },
                 {
                     "url": "../cats-contact.png",
+                    "alt": "img2"
+                }
+            ]
+        }, {
+            "id": "5",
+            "projectName": "Weather Checker",
+            "projectDesc": "App for checking the weather in any city via an API, features a register and login system, persistent login and password hashing.",
+            "projectApp": "https://quiet-kulfi-dc8d40.netlify.app/",
+            "projectCode": "https://github.com/zvischvarcz/m49-weather-app/tree/main/src",
+            "projectTech": [
+                {
+                    "name": "React",
+                    "desc": "React is a front-end JavaScript library"
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../weather-login.png",
+                    "alt": "img1"
+                },
+                {
+                    "url": "../weather-home.png",
+                    "alt": "img2"
+                }
+            ]
+        }, {
+            "id": "6",
+            "projectName": "Test Driven Development",
+            "projectDesc": "Work done while learning Test Driven Development",
+            "projectApp": "https://github.com/RyanRFH/TestDrivenDevelopment/blob/main/src/__tests__/greet-test.tsx",
+            "projectCode": "https://github.com/RyanRFH/TestDrivenDevelopment/blob/main/src/__tests__/greet-test.tsx",
+            "projectTech": [
+                {
+                    "name": "Jest",
+                    "desc": "Jest is a JavaScript testing framework, tests are useful for assuring your app is working as intented."
+                },
+                {
+                    "name": "Typescript",
+                    "desc": "Typescript adds static typing to JavaScript. I used this testing project as an opportunity to get some experience using typescript."
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../tdd-code.png",
+                    "alt": ""
+                }
+            ]
+        }, {
+            "id": "7",
+            "projectName": "To Do List",
+            "projectDesc": "A simple to do list with an easy to use colour coded UI",
+            "projectApp": "https://to-do-list-fuwb.vercel.app/",
+            "projectCode": "https://github.com/RyanRFH/To-Do-List/blob/main/src/App.js",
+            "projectTech": [
+                {
+                    "name": "React",
+                    "desc": "React is a front-end JavaScript library"
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../todo-home.png",
+                    "alt": "img1"
+                }
+            ]
+        }, {
+            "id": "8",
+            "projectName": "Calculator",
+            "projectDesc": "A calculator app including thorough error checking and handling",
+            "projectApp": "https://calculator-gray-eta.vercel.app/",
+            "projectCode": "https://github.com/RyanRFH/Calculator/blob/main/src/App.js",
+            "projectTech": [
+                {
+                    "name": "React",
+                    "desc": "React is a front-end JavaScript library"
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../calc-home.png",
+                    "alt": "img1"
+                }
+            ]
+        }, {
+            "id": "9",
+            "projectName": "Dice Game",
+            "projectDesc": "First player to reach 21 wins, roll a 1 and you lose. Dynamic design allows unlimited amount of players.",
+            "projectApp": "https://ryanrfh.github.io/DiceGame/",
+            "projectCode": "https://github.com/RyanRFH/DiceGame/blob/main/script.js",
+            "projectTech": [
+                {
+                    "name": "JavaScript",
+                    "desc": "A programming language used to develop the logic in websites"
+                },
+                {
+                    "name": "HTML",
+                    "desc": "Stands for HyperText Markup Language, it defines the content and structure of web content "
+                },
+                {
+                    "name": "CSS",
+                    "desc": "Stands for Cascading Style Sheets, used in the styling and presentation of web pages."
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../dice.png",
+                    "alt": ""
+                }
+            ]
+        }, {
+            "id": "10",
+            "projectName": "Backend",
+            "projectDesc": "An API created using Express, Sequelize and MySQL",
+            "projectApp": "https://github.com/RyanRFH/DatabaseUsingSequelize/tree/main/src",
+            "projectCode": "https://github.com/RyanRFH/DatabaseUsingSequelize/tree/main/src",
+            "projectTech": [
+                {
+                    "name": "Sequelize",
+                    "desc": "Sequelize is an Object Relational Mapper that makes it easy to work with databases."
+                }
+            ],
+            "projectImages":[
+                {
+                    "url": "../backend-conts.png",
+                    "alt": "img1"
+                },
+                {
+                    "url": "../backend-serv.png",
                     "alt": "img2"
                 }
             ]

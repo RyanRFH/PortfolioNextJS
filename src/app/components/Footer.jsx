@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import React from 'react';
 
-const Navbar = () => {
+const Footer = () => {
     return (
-        <div className='bg-blue-400 h-[130px] w-full'>
+        <div className='bg-blue-400 h-[130px] w-full mt-auto'>
             <h1 className='text-4xl lg:text-6xl lg:ml-[80px] ml-[10px] font-bebas pt-[20px]'>Contact Me</h1>
             <div className='flex justify-around font-ubuntu font-bold text-sm flex-col lg:flex-row ml-[10px] lg:text-2xl'>
                 <div className='flex'>
@@ -31,6 +31,6 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Footer;
 
 

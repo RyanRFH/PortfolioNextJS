@@ -17,11 +17,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
       </head>
-      <body>
+      <body className="flex flex-col min-h-screen">
         
         <Navbar />
         {children}
-        <Footer/>
+        <Footer className=""/>
+
 
       </body>
     </html>
