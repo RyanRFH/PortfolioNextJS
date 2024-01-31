@@ -5,7 +5,7 @@ export default function Home() {
       <div className="mt-[20px] ml-[10px] text-xl font-ubuntu mr-[20px]">
         <p className="text-2xl">Hi</p>
         <p className="mt-[10px] mb-[10px]">My name is Ryan</p>
-        <p className="mb-[10px]">I'm a fullstack developer, primarily using React (MERN)</p>
+        <p className="mb-[10px]">I&apos;m a fullstack developer, primarily using React (MERN)</p>
         <p>I also like to experiment with other technologies and frameworks</p>
         <div className="mt-[20px] max-w-[700px] text-sm md:text-xl">
           <div className="grid grid-cols-2 bg-gray-300 h-[40px]">
@@ -22,7 +22,7 @@ export default function Home() {
       </div>
 
       <a href="/projects">
-        <button className="w-[200px] mb-[20px]">          My Projects    </button>
+        <button className="w-[200px] mb-[20px]">My Projects</button>
       </a>
 
 
@@ -30,4 +30,4 @@ export default function Home() {
     </div>
 
   );
-}
+};
