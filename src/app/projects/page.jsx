@@ -8,9 +8,6 @@ async function getProjects() {
         
         const res = await fetch(`/api/projects-data`, {
             method: "GET",
-            headers: {
-                "Content-type": "application/json"
-            },
             next: {
                 revalidate: 0 //Using 0 opts our of using cache
             }

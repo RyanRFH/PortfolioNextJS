@@ -7,9 +7,6 @@ async function getProject(id) {
         //Object argument sets data revalidation time in seconds
         const res = await fetch(`/api/project-data/${id}`, {
             method: "GET",
-            headers: {
-                "Content-type": "application/json"
-            },
             next: {
                 revalidate: 0 //Using 0 opts our of using cache
             }
@@ -26,9 +23,6 @@ async function getProjects() {
     //Object argument sets data revalidation time in seconds
     const res = await fetch(`/api/projects-data`, {
         method: "GET",
-        headers: {
-            "Content-type": "application/json"
-        },
         next: {
             revalidate: 0 //Using 0 opts our of using cache
         }
