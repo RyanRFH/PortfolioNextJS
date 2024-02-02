@@ -31,7 +31,7 @@ export async function GET() {
             message: "Error Occurred",
             error: error
         }
-        return NextResponse.json(res)
+        // return NextResponse.json(res)
     }
 
 }
