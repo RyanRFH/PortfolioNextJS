@@ -26,7 +26,11 @@ export async function GET(req, {params}) {
         const projId = await params.id
         connectMongoDB()
         const project = await Project.findOne({id: projId})
+        if (!project) {
+            throw new Error("Project not found")
+        }
         return NextResponse.json({ project })
+
     } catch (error) {
         const res = {
             message: "Error Occurred",

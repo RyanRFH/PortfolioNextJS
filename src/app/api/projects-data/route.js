@@ -25,7 +25,7 @@ export async function GET() {
     try {
         connectMongoDB()
         const projects = await Project.find({})
-        return NextResponse.json({ projects })
+        return NextResponse.json(projects)
     } catch (error) {
         const res = {
             message: "Error Occurred",

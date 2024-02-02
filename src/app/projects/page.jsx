@@ -9,7 +9,7 @@ async function getProjects() {
         }
     })
     const data = await res.json()
-    return data.projects
+    return data
 }
 
 const page = async () => {
