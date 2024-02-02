@@ -13,7 +13,7 @@ async function getProjects() {
         //     }
         // })
 
-        // Live version
+        //Live version
         const res = await fetch(`/api/projects-data`, {
             method: "GET",
             next: {
@@ -52,7 +52,9 @@ const page = async () => {
         <div className="mt-[80px] lg:ml-[100px] mb-[50px]">
             <h1 className="text-6xl font-bebas text-blue-700 lg:text-8xl ml-[20px]">Projects</h1>
             <div className='mt-[50px] flex justify-evenly flex-wrap'>
-
+                {projects?.error &&
+                    <h1 className='text-6xl font-bebas'>{projects.error}</h1>
+                }
                 {/* Check if error flag is triggered */}
                 {projectsErrorFlag ?
                     <div>
