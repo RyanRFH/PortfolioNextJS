@@ -3,20 +3,30 @@ import ProjectThumbnail from '../components/ProjectThumbnail';
 import { NextResponse } from 'next/server';
 
 async function getProjects() {
-    //Object argument sets data revalidation time in seconds
+    //Next object argument sets data revalidation time in seconds
     try {
-        
+        //Local version
+        // const res = await fetch(`${process.env.API_URL}/api/projects-data`, {
+        //     method: "GET",
+        //     next: {
+        //         revalidate: 0 //Using 0 opts our of using cache
+        //     }
+        // })
+
+        // Live version
         const res = await fetch(`/api/projects-data`, {
             method: "GET",
             next: {
                 revalidate: 0 //Using 0 opts our of using cache
             }
         })
+
         const data = await res.json()
         return data
     } catch (error) {
-        console.log("error in getProjects()")
-        return { error: "error" }
+        const errorMessage = "error in getProjects()"
+        console.log(errorMessage)
+        return { error: errorMessage }
     }
 
 }
@@ -49,7 +59,7 @@ const page = async () => {
                         <h1 className='text-6xl font-bebas'>No Projects Found</h1>
                         <h1>{projectsErrorFlag}</h1>
                         <p>error</p>
-                        {`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/projects-data`}
+                        {`${process.env.API_URL}/api/projects-data`}
                     </div>
 
                     :
