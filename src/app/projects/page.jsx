@@ -6,7 +6,7 @@ async function getProjects() {
     //Object argument sets data revalidation time in seconds
     try {
         
-        const res = await fetch(`${process.env.API_URL}/api/projects-data`, {
+        const res = await fetch(`${process.env.DB_HOST}/api/projects-data`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json"
