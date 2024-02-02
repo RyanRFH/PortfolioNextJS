@@ -25,9 +25,6 @@ export default function Home() {
         <button className="w-[200px] mb-[20px]">My Projects</button>
       </a>
 
-      {`${process.env.API_URL}/api/projects-data`}
-
-
     </div>
 
   );

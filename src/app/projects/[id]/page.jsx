@@ -42,7 +42,6 @@ const ProjectDetails = async ({ params }) => {
     const id = params.id
     const projectData = await getProject(id)
     const projects = await getProjects()
-    // const projects = [{}] //DELETE THIS
 
     const projectCount = projects.length
 
