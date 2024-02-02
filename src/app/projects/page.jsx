@@ -6,7 +6,7 @@ async function getProjects() {
     //Object argument sets data revalidation time in seconds
     try {
         
-        const res = await fetch(`${process.env.DB_HOST}/api/projects-data`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/projects-data`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json"
@@ -52,7 +52,7 @@ const page = async () => {
                         <h1 className='text-6xl font-bebas'>No Projects Found</h1>
                         <h1>{projectsErrorFlag}</h1>
                         <p>error</p>
-                        {`${process.env.DB_HOST}/api/projects-data`}
+                        {`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/projects-data`}
                     </div>
 
                     :

@@ -25,7 +25,7 @@ export default function Home() {
         <button className="w-[200px] mb-[20px]">My Projects</button>
       </a>
 
-      {`${process.env.DB_HOST}/api/projects-data`}
+      {`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/projects-data`}
 
 
     </div>
