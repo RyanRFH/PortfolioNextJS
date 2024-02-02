@@ -4,12 +4,15 @@ import ProjectBlock from "../../components/ProjectBlock";
 
 async function getProject(id) {
     //Object argument sets data revalidation time in seconds
-    const res = await fetch(`http://localhost:4000/projects/${id}`, {
+    // `${process.env.API_URL}/api/projects-data`
+    const res = await fetch(`${process.env.API_URL}/api/project-data/${id}`, {
         next: {
             revalidate: 0 //Using 0 opts our of using cache
         }
     })
-    return res.json()
+    const response = await res.json()
+    console.log(response)
+    return response.project
 }
 
 async function getProjects() {
@@ -21,6 +24,17 @@ async function getProjects() {
     })
     return res.json()
 }
+
+// async function getProjects() {
+//     //Object argument sets data revalidation time in seconds
+//     const res = await fetch('http://localhost:3000/api/projects-data', {
+//         next: {
+//             revalidate: 0 //Using 0 opts our of using cache
+//         }
+//     })
+//     const data = await res.json()
+//     return data.projects
+// }
 
 //Destructured props to get the params object directly
 const ProjectDetails = async ({ params }) => {

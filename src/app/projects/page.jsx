@@ -3,12 +3,13 @@ import ProjectThumbnail from '../components/ProjectThumbnail';
 
 async function getProjects() {
     //Object argument sets data revalidation time in seconds
-    const res = await fetch('http://localhost:4000/projects', {
+    const res = await fetch(`${process.env.API_URL}/api/projects-data`, {
         next: {
             revalidate: 0 //Using 0 opts our of using cache
         }
     })
-    return res.json()
+    const data = await res.json()
+    return data.projects
 }
 
 const page = async () => {
@@ -23,7 +24,6 @@ const page = async () => {
                 {projects.length === 0 && (
                     <h1 className='text-6xl font-bebas'>No Projects Found</h1>
                 )}
-
                 {projects.map((project, index) => {
                     return (
                         <div key={index}>
