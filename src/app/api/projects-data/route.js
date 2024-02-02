@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
     try {
         const body = await req.json()
-        connectMongoDB()
+        await connectMongoDB()
         await Project.insertMany(body)
 
         return new NextResponse('OK')
@@ -23,7 +23,7 @@ export async function POST(req) {
 
 export async function GET() {
     try {
-        connectMongoDB()
+        await connectMongoDB()
         const projects = await Project.find({})
         return NextResponse.json(projects)
     } catch (error) {
