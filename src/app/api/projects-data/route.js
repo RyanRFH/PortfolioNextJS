@@ -17,11 +17,9 @@ export async function POST(req) {
         }
         return NextResponse.json(res)
     }
-
-
 }
 
-export async function GET() {
+export async function GET(req) {
     try {
         await connectMongoDB()
         const projects = await Project.find({})

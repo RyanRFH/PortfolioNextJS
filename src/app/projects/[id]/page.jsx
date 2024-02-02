@@ -6,16 +6,7 @@ async function getProject(id) {
     try {
         //Object argument sets data revalidation time in seconds
 
-        //Local version
-        // const res = await fetch(`${process.env.API_URL}/api/project-data/${id}`, {
-        //     method: "GET",
-        //     next: {
-        //         revalidate: 0 //Using 0 opts our of using cache
-        //     }
-        // })
-
-        //Live version
-        const res = await fetch(`/api/project-data/${id}`, {
+        const res = await fetch(`${process.env.API_URL}/projects/getProjectById/${id}`, {
             method: "GET",
             next: {
                 revalidate: 0 //Using 0 opts our of using cache
@@ -34,21 +25,16 @@ async function getProjects() {
     //Object argument sets data revalidation time in seconds
 
     //Local version
-    // const res = await fetch(`${process.env.API_URL}/api/projects-data`, {
-    //     method: "GET",
-    //     next: {
-    //         revalidate: 0 //Using 0 opts our of using cache
-    //     }
-    // })
-
-    //Live version
-    const res = await fetch(`/api/projects-data`, {
+    const res = await fetch(`${process.env.API_URL}/projects/getProjects`, {
         method: "GET",
         next: {
             revalidate: 0 //Using 0 opts our of using cache
         }
     })
-    return res.json()
+
+
+    const data = await res.json()
+    return data.allProjects
 }
 
 //Destructured props to get the params object directly
@@ -56,6 +42,7 @@ const ProjectDetails = async ({ params }) => {
     const id = params.id
     const projectData = await getProject(id)
     const projects = await getProjects()
+    // const projects = [{}] //DELETE THIS
 
     const projectCount = projects.length
 

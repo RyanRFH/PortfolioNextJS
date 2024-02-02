@@ -5,16 +5,8 @@ import { NextResponse } from 'next/server';
 async function getProjects() {
     //Next object argument sets data revalidation time in seconds
     try {
-        //Local version
-        // const res = await fetch(`${process.env.API_URL}/api/projects-data`, {
-        //     method: "GET",
-        //     next: {
-        //         revalidate: 0 //Using 0 opts our of using cache
-        //     }
-        // })
 
-        //Live version
-        const res = await fetch(`/api/projects-data`, {
+        const res = await fetch(`${process.env.API_URL}/projects/getProjects`, {
             method: "GET",
             next: {
                 revalidate: 0 //Using 0 opts our of using cache
@@ -22,7 +14,8 @@ async function getProjects() {
         })
 
         const data = await res.json()
-        return data
+        return data.allProjects
+
     } catch (error) {
         const errorMessage = "error in getProjects()"
         console.log(errorMessage)
