@@ -51,6 +51,7 @@ const page = async () => {
                     <div>
                         <h1 className='text-6xl font-bebas'>No Projects Found</h1>
                         <h1>{projectsErrorFlag}</h1>
+                        <p>error</p>
                         {`${process.env.API_URL}/api/projects-data`}
                     </div>
 
