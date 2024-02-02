@@ -5,6 +5,7 @@ import { NextResponse } from 'next/server';
 async function getProjects() {
     //Object argument sets data revalidation time in seconds
     try {
+        
         const res = await fetch(`${process.env.API_URL}/api/projects-data`, {
             method: "GET",
             headers: {
@@ -50,6 +51,7 @@ const page = async () => {
                     <div>
                         <h1 className='text-6xl font-bebas'>No Projects Found</h1>
                         <h1>{projectsErrorFlag}</h1>
+                        {`${process.env.API_URL}/api/projects-data`}
                     </div>
 
                     :
