@@ -6,7 +6,7 @@ async function getProjects() {
     //Object argument sets data revalidation time in seconds
     try {
         
-        const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/projects-data`, {
+        const res = await fetch(`/api/projects-data`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json"
