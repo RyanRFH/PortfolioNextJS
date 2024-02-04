@@ -5,8 +5,7 @@ import { NextResponse } from 'next/server';
 async function getProjects() {
     //Next object argument sets data revalidation time in seconds
     try {
-
-        const res = await fetch(`${process.env.API_URL}/projects/getProjects`, {
+        const res = await fetch(`${process.env.API_URL}api/projects-data`, {
             method: "GET",
             next: {
                 revalidate: 0 //Using 0 opts our of using cache
