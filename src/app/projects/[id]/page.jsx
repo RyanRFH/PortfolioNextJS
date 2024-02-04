@@ -5,7 +5,6 @@ import ProjectBlock from "../../components/ProjectBlock";
 async function getProject(id) {
     try {
         //Object argument sets data revalidation time in seconds
-        console.log(`${process.env.API_URL}api/project-data/${id}`)
         const res = await fetch(`${process.env.API_URL}api/project-data/${id}`, {
             method: "GET",
             next: {
@@ -23,7 +22,6 @@ async function getProject(id) {
 
 async function getProjects() {
     //Object argument sets data revalidation time in seconds
-    console.log(`${process.env.API_URL}api/projects-data`)
     const res = await fetch(`${process.env.API_URL}api/projects-data`, {
         method: "GET",
         next: {
@@ -33,7 +31,7 @@ async function getProjects() {
 
 
     const data = await res.json()
-    return data.allProjects
+    return data
 }
 
 //Destructured props to get the params object directly

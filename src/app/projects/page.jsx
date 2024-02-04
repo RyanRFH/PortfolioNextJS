@@ -13,8 +13,7 @@ async function getProjects() {
         })
 
         const data = await res.json()
-        return data.allProjects
-
+        return data
     } catch (error) {
         const errorMessage = "error in getProjects()"
         console.log(errorMessage)
