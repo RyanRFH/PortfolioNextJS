@@ -11,7 +11,6 @@ async function getProjects() {
                 revalidate: 0 //Using 0 opts our of using cache
             }
         })
-        console.log("test")
         const data = await res.json()
         return data
     } catch (error) {

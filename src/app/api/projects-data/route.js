@@ -3,21 +3,21 @@ import connectMongoDB from "../libs/db";
 import Project from "../models/project";
 import { NextResponse } from "next/server";
 
-export async function POST(req) {
-    try {
-        const body = await req.json()
-        await connectMongoDB()
-        await Project.insertMany(body)
+// export async function POST(req) {
+//     try {
+//         const body = await req.json()
+//         await connectMongoDB()
+//         await Project.insertMany(body)
 
-        return new NextResponse('OK')
-    } catch (error) {
-        const res = {
-            message: "Error Occurred",
-            error: error
-        }
-        return NextResponse.json(res)
-    }
-}
+//         return new NextResponse('OK')
+//     } catch (error) {
+//         const res = {
+//             message: "Error Occurred",
+//             error: error
+//         }
+//         return NextResponse.json(res)
+//     }
+// }
 
 export async function GET(req) {
     try {
