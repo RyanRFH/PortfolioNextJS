@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
 //     try {
 //         const body = await req.json()
 //         await connectMongoDB()
-//         await Project.insertMany(body)
+//         await Project.insertMany(body.projects)
 
 //         return new NextResponse('OK')
 //     } catch (error) {
