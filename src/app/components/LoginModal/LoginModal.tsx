@@ -3,27 +3,26 @@
 //To Do
 //Upload in current state after login modal added, to check if works
 
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import "./LoginModal.css";
 import hidePasswordIcon from "./LoginModalAssets/hidepassicon.webp";
 import showPasswordIcon from "./LoginModalAssets/showpassicon.png";
 import closeLoginWindowIcon from "./LoginModalAssets/closeloginwindowicon.png";
 import loginTabIcon from "./LoginModalAssets/logintabicon.png";
 
-const NavBar = () => {
+const LoginModal = () => {
     let [selectedTab, setSelectedTab] = useState("Login");
     let [hidePass, setHidePass] = useState(true);
     let [loginModal, setLoginModal] = useState("");
     //Calling to document gives an error because NextJS is server sided, but this component uses client so not sure
-    let loginModalEle = document.getElementById("loginModal");
-
+    const loginModalEle = React.useRef<HTMLDivElement>(null);
 
     //Login modal animation
     let x: number;
     // let y: number;
-    if (loginModalEle) {
+    if (loginModalEle.current) {
         //Get elements current position
-        x = loginModalEle.offsetLeft;
+        x = loginModalEle.current.offsetLeft;
         // y = loginModalEle.offsetTop;
     }
     //NodeJS.Timer?
@@ -36,13 +35,12 @@ const NavBar = () => {
 
     function closeLoginModal() {
         console.log("close modal frame running");
-        console.log(loginModalEle)
         if (loginModalEle) {
             if (x <= -300) {
                 clearInterval(loginModalTimer);
             } else {
                 x -= 20;
-                loginModalEle.style.left = x + "px";
+                loginModalEle.current.style.left = x + "px";
             }
         } else {
             console.log("modal not found in closeLoginModal");
@@ -53,15 +51,15 @@ const NavBar = () => {
         console.log("open modal frame running");
         if (loginModalEle) {
             //Place the modal in the middle of the screen and then remove the width of the modal so it's centered in the screen, the round
-            if (x >= Math.round((window.innerWidth / 2) - (loginModalEle.offsetWidth / 2))) {
+            if (x >= Math.round((window.innerWidth / 2) - (loginModalEle.current.offsetWidth / 2))) {
                 clearInterval(loginModalTimer);
-                if (loginModalEle.parentElement) {
-                    loginModalEle.style.removeProperty("left"); //Remove left property so modal is centered again
+                if (loginModalEle.current.parentElement) {
+                    loginModalEle.current.style.removeProperty("left"); //Remove left property so modal is centered again
                 }
                 console.log("ending X = :", x);
             } else {
                 x += 20;
-                loginModalEle.style.left = x + "px";
+                loginModalEle.current.style.left = x + "px";
             }
         } else {
             console.log("modal not found in openLoginModal");
@@ -77,9 +75,9 @@ const NavBar = () => {
             </button>
 
 
-            <div id='loginModal' className={`fixed bg-green-300 rounded-xl border-black border-2 min-h-[300px] pointer-events-auto z-[100]`}>
+            <div ref={loginModalEle} id='loginModal' className={`fixed bg-green-300 rounded-xl border-black border-2 min-h-[300px] pointer-events-auto z-[100]`}>
                 <div className='flex justify-evenly w-full min-h-[50px] border-b-2 border-green-500'>
-                    
+
                     <button onClick={() => { setSelectedTab("Login") }} className={` navbarTab rounded-tl-xl ${selectedTab === "Login" ? "bg-green-300" : "bg-green-200"}`}>
                         <p>Login</p>
                     </button>
@@ -155,7 +153,7 @@ const NavBar = () => {
                                                 }
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </form>
                             </div>
@@ -169,4 +167,4 @@ const NavBar = () => {
 
 
 
-export default NavBar;
+export default LoginModal;
