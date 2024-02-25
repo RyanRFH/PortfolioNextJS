@@ -1,7 +1,7 @@
 'use client';
 
 //To Do
-//Upload in current state after login modal added, to check if works
+
 
 import React, { use, useEffect, useState } from 'react';
 import "./LoginModal.css";
@@ -17,6 +17,11 @@ const LoginModal = () => {
     //Calling to document gives an error because NextJS is server sided, but this component uses client so not sure
     const loginModalEle = React.useRef<HTMLDivElement>(null);
 
+    useEffect(() => {
+        setLoginModal("closed");
+    },[])
+
+    
     //Login modal animation
     let x: number;
     // let y: number;
@@ -28,13 +33,17 @@ const LoginModal = () => {
     //NodeJS.Timer?
     let loginModalTimer: NodeJS.Timeout;
     if (loginModal === "closed") {
+        console.log("INTERVAL SETTTTTTTTTTT");
         loginModalTimer = setInterval(closeLoginModal, 1);
+
     } else if (loginModal === "open") {
         loginModalTimer = setInterval(openLoginModal, 1);
     }
 
     function closeLoginModal() {
         console.log("close modal frame running");
+        console.log(loginModalEle)
+        console.log(loginModalEle.current)
         if (loginModalEle) {
             if (x <= -300) {
                 clearInterval(loginModalTimer);
