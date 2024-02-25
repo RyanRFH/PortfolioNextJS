@@ -10,6 +10,6 @@ body {
   /* @apply text-white */
 }
 
-button {
+.buttonblue {
   @apply hover:text-blue-600 mt-[20px] h-[40px] md:h-[70px] md:w-[150px] bg-blue-500 text-3xl font-bebas flex justify-center items-center rounded-2xl text-blue-100;
 }

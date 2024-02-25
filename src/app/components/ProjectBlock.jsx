@@ -24,8 +24,8 @@ const ProjectBlock = (props) => {
                 <div className='flex justify-center items-center'>
                     <div className='absolute left-0'>
                         <a href="/projects">
-                            <button className='hidden md:block min-w-[40px] xl:min-w-[300px] mb-[20px] mx-[5px] xl:mx-[50px]'>← Projects</button>
-                            <button className='md:hidden text-xl min-w-[40px] xl:min-w-[300px] mb-[20px] mx-[5px] xl:mx-[50px]'>←</button>
+                            <button className='buttonblue hidden md:block min-w-[40px] xl:min-w-[300px] mb-[20px] mx-[5px] xl:mx-[50px]'>← Projects</button>
+                            <button className='buttonblue md:hidden text-xl min-w-[40px] xl:min-w-[300px] mb-[20px] mx-[5px] xl:mx-[50px]'>←</button>
                         </a>
                     </div>
                     <h1 className='font-bebas text-4xl md:text-5xl lg:text-6xl bg-yellow-200 p-[10px] lg:p-[20px] rounded-lg'>{props.projectName}</h1>
@@ -43,14 +43,14 @@ const ProjectBlock = (props) => {
 
                 <div className='flex justify-around mb-[10px] lg:px-[300px]'>
                     <a href={props.projectApp} target='_blank'>
-                        <button className='min-w-[120px]'>
+                        <button className='buttonblue min-w-[120px]'>
                             <p className='mr-[10px]' href="/projects">App</p>
                             <img className='w-[30px]' src='../external-link.svg' alt='link' />
                         </button>
                     </a>
 
                     <a href={props.projectCode} target='_blank'>
-                        <button className='min-w-[120px]'>
+                        <button className='buttonblue min-w-[120px]'>
                             <p className='mr-[10px]' href="/projects">Code</p>
                             <img className='w-[30px]' src='../external-link.svg' alt='link' />
                         </button>
@@ -84,13 +84,13 @@ const ProjectBlock = (props) => {
                 <div className='flex'>
                     <div className={`${prevProjButton} justify-center xl:justify-start`}>
                         <a href={`/projects/${Number(props.projectId) - 1}`}>
-                            <button className="text-sm lg:text-4xl md:w-[300px] mb-[20px] px-[20px] mx-[5px] xl:mx-[50px]">← Previous Project</button>
+                            <button className="buttonblue text-sm lg:text-4xl md:w-[300px] mb-[20px] px-[20px] mx-[5px] xl:mx-[50px]">← Previous Project</button>
                         </a>
                     </div>
 
                     <div className={`${nextProjButton} justify-center ml-auto`}>
                         <a href={`/projects/${Number(props.projectId) + 1}`}>
-                            <button className="text-sm lg:text-4xl md:w-[300px] mb-[20px] px-[20px] mx-[5px] xl:mx-[50px]">Next Project →</button>
+                            <button className="buttonblue text-sm lg:text-4xl md:w-[300px] mb-[20px] px-[20px] mx-[5px] xl:mx-[50px]">Next Project →</button>
                         </a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ const ProjectBlock = (props) => {
 
                 <div className='flex justify-center xl:justify-start'>
                     <a href="/projects">
-                        <button className="md:w-[500px] px-[30px] mb-[20px] mx-[5px] xl:mx-[50px]">← Projects</button>
+                        <button className="buttonblue md:w-[500px] px-[30px] mb-[20px] mx-[5px] xl:mx-[50px]">← Projects</button>
                     </a>
                 </div>
 

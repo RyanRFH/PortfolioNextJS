@@ -50,7 +50,7 @@ const ProjectDetails = async ({ params }) => {
                 <div className='flex items-center justify-center mt-[200px] flex-col'>
                     <p className='text-6xl font-bebas'>PROJECT NOT FOUND</p>
                     <a href='/projects'>
-                        <button>
+                        <button className='buttonblue'>
                             Projects
                         </button>
                     </a>

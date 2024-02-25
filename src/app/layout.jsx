@@ -3,7 +3,9 @@ import "./globals.css";
 
 //Components
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
+import LoginModal from "./components/LoginModal/LoginModal";
+
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -18,7 +20,7 @@ export default function RootLayout({ children }) {
       <head>
       </head>
       <body className="flex flex-col min-h-screen">
-        
+        <LoginModal/>
         <Navbar />
         {children}
         <Footer className=""/>

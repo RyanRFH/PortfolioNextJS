@@ -22,7 +22,7 @@ export default function Home() {
       </div>
 
       <a href="/projects">
-        <button className="w-[200px] mb-[20px]">My Projects</button>
+        <button className="buttonblue w-[200px] mb-[20px]">My Projects</button>
       </a>
 
     </div>
