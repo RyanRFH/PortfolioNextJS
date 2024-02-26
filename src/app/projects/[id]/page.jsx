@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ProjectBlock from "../../components/ProjectBlock";
+import Link from 'next/link';
 
 async function getProject(id) {
     try {
@@ -43,7 +44,6 @@ const ProjectDetails = async ({ params }) => {
     const projectCount = projects.length
 
     return (
-
 
         <div className="">
             {!projectData?.id ?
