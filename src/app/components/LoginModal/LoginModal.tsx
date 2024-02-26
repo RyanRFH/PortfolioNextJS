@@ -1,7 +1,5 @@
 'use client';
 
-//To Do
-
 
 import React, { use, useEffect, useState } from 'react';
 import "./LoginModal.css";
@@ -18,7 +16,8 @@ const LoginModal = () => {
     const loginModalEle = React.useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        setLoginModal("closed");
+        //Set login modal to off screen (closed) initially
+        // loginModalEle.current.style.left = "252px"
     },[])
 
     
@@ -63,7 +62,8 @@ const LoginModal = () => {
             if (x >= Math.round((window.innerWidth / 2) - (loginModalEle.current.offsetWidth / 2))) {
                 clearInterval(loginModalTimer);
                 if (loginModalEle.current.parentElement) {
-                    loginModalEle.current.style.removeProperty("left"); //Remove left property so modal is centered again
+                    // loginModalEle.current.style.removeProperty("left"); //Remove left property so modal is centered again
+                    loginModalEle.current.classList.remove("left");
                 }
                 console.log("ending X = :", x);
             } else {
@@ -76,7 +76,7 @@ const LoginModal = () => {
     }
 
     return (
-        <div className='flex items-center justify-center h-screen w-screen absolute pointer-events-none'>
+        <div className='flex items-center justify-center h-full w-full absolute pointer-events-none z-[100]'>
 
             <button onClick={(event) => { setLoginModal("open"); event.preventDefault(); }} id='loginTab' className={`fixed flex items-center justify-evenly top-[113px] bg-green-400 rounded-r-3xl w-[150px] h-[60px] text-2xl pointer-events-auto`}>
                 Login
@@ -84,7 +84,7 @@ const LoginModal = () => {
             </button>
 
 
-            <div ref={loginModalEle} id='loginModal' className={`fixed bg-green-300 rounded-xl border-black border-2 min-h-[300px] pointer-events-auto z-[100]`}>
+            <div ref={loginModalEle} id='loginModal' className={`fixed bg-green-300  rounded-xl border-black border-2 min-h-[300px] pointer-events-auto`}>
                 <div className='flex justify-evenly w-full min-h-[50px] border-b-2 border-green-500'>
 
                     <button onClick={() => { setSelectedTab("Login") }} className={` navbarTab rounded-tl-xl ${selectedTab === "Login" ? "bg-green-300" : "bg-green-200"}`}>

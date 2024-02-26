@@ -49,11 +49,11 @@ const ProjectDetails = async ({ params }) => {
             {!projectData?.id ?
                 <div className='flex items-center justify-center mt-[200px] flex-col'>
                     <p className='text-6xl font-bebas'>PROJECT NOT FOUND</p>
-                    <a href='/projects'>
+                    <Link href='/projects'>
                         <button className='buttonblue'>
                             Projects
                         </button>
-                    </a>
+                    </Link>
                 </div>
 
                 :

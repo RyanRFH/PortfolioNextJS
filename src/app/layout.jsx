@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className="flex flex-col min-h-screen">
         <LoginModal/>
-        <Navbar />
+        <Navbar/>
         {children}
-        <Footer className=""/>
+        <Footer/>
 
 
       </body>

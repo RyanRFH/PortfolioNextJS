@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+
 export default function Home() {
   return (
     <div className="mt-[80px] ml-[10px] lg:ml-[100px]">
@@ -10,7 +13,7 @@ export default function Home() {
         <div className="mt-[20px] max-w-[700px] text-sm md:text-xl">
           <div className="grid grid-cols-2 bg-gray-300 h-[40px]">
             <p className="mb-[10px] ml-[10px]">Main Languages : </p>
-            <p>Javascript, C++, C#</p>
+            <p>Javascript, C#</p>
           </div>
 
           <div className="grid grid-cols-2 bg-gray-300 mt-[10px] h-[40px]">
@@ -21,9 +24,10 @@ export default function Home() {
         </div>
       </div>
 
-      <a href="/projects">
-        <button className="buttonblue w-[200px] mb-[20px]">My Projects</button>
-      </a>
+      <Link href="/projects">
+        <button className="buttonblue w-[400px] h-[70px] mt-[40px] text-5xl">My Projects</button>
+      </Link>
+
 
     </div>
 

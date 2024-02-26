@@ -3,6 +3,7 @@
 //Block for displaying projects on project page
 import { Carousel } from '@material-tailwind/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 
@@ -23,12 +24,12 @@ const ProjectBlock = (props) => {
             <div>
                 <div className='flex justify-center items-center'>
                     <div className='absolute left-0'>
-                        <a href="/projects">
-                            <button className='buttonblue hidden md:block min-w-[40px] xl:min-w-[300px] mb-[20px] mx-[5px] xl:mx-[50px]'>← Projects</button>
-                            <button className='buttonblue md:hidden text-xl min-w-[40px] xl:min-w-[300px] mb-[20px] mx-[5px] xl:mx-[50px]'>←</button>
-                        </a>
+                        <Link href="/projects">
+                            <button className='buttonblue hidden mb-[20px] w-[170px] h-[50px] ml-[10px] text-3xl xl:block 2xl:ml-[80px]'>← Projects</button>
+                            <button className='buttonblue flex items-center justify-center text-2xl w-[40px] h-[30px] ml-[5px] lg:w-[70px] lg:h-[40px] xl:hidden xl:min-w-[300px] xl:mx-[50px] '>←</button>
+                        </Link>
                     </div>
-                    <h1 className='font-bebas text-4xl md:text-5xl lg:text-6xl bg-yellow-200 p-[10px] lg:p-[20px] rounded-lg'>{props.projectName}</h1>
+                    <h1 className='font-bebas text-4xl mx-[50px] md:text-5xl lg:text-6xl bg-yellow-200 p-[10px] lg:p-[20px] rounded-lg text-center '>{props.projectName}</h1>
                 </div>
 
                 <div className='flex items-center justify-center mt-[20px]'>
@@ -41,24 +42,24 @@ const ProjectBlock = (props) => {
                     </Carousel>
                 </div>
 
-                <div className='flex justify-around mb-[10px] lg:px-[300px]'>
-                    <a href={props.projectApp} target='_blank'>
-                        <button className='buttonblue min-w-[120px]'>
+                <div className='flex justify-around mb-[10px] lg:mx-[300px]'>
+                    <Link href={props.projectApp} target='_blank'>
+                        <button className='buttonblue min-w-[120px] flex items-center justify-center mt-[10px] text-3xl h-[50px] lg:w-[200px]'>
                             <p className='mr-[10px]' href="/projects">App</p>
                             <img className='w-[30px]' src='../external-link.svg' alt='link' />
                         </button>
-                    </a>
+                    </Link>
 
-                    <a href={props.projectCode} target='_blank'>
-                        <button className='buttonblue min-w-[120px]'>
+                    <Link href={props.projectCode} target='_blank'>
+                        <button className='buttonblue min-w-[120px] flex items-center justify-center mt-[10px] text-3xl h-[50px] lg:w-[200px]'>
                             <p className='mr-[10px]' href="/projects">Code</p>
                             <img className='w-[30px]' src='../external-link.svg' alt='link' />
                         </button>
-                    </a>
+                    </Link>
 
                 </div>
 
-                <div className='flex items-center justify-center mx-[10px] font-ubuntu font-bold my-[30px] text-xl lg:text-3xl bg-blue-200 rounded-xl p-[10px] lg:mx-[150px] lg:p-[50px]'>
+                <div className='flex items-center justify-center mx-[10px] font-ubuntu font-bold my-[30px] text-xl lg:text-3xl bg-blue-200 rounded-xl p-[10px] lg:mx-[50px] lg:p-[50px]'>
                     <p>{props.projectDesc}</p>
                 </div>
 
@@ -83,23 +84,22 @@ const ProjectBlock = (props) => {
 
                 <div className='flex'>
                     <div className={`${prevProjButton} justify-center xl:justify-start`}>
-                        <a href={`/projects/${Number(props.projectId) - 1}`}>
-                            <button className="buttonblue text-sm lg:text-4xl md:w-[300px] mb-[20px] px-[20px] mx-[5px] xl:mx-[50px]">← Previous Project</button>
-                        </a>
+                        <Link href={`/projects/${Number(props.projectId) - 1}`}>
+                            <button className="buttonblue text-lg w-[170px] h-[50px] mb-[20px] mx-[5px] px-[20px] mt-[20px] sm:w-[250px] sm:text-2xl md:w-[300px] md:text-3xl lg:text-4xl xl:w-[400px] xl:h-[100px] xl:text-5xl xl:mx-[50px]">← Previous Project</button>
+                        </Link>
                     </div>
 
                     <div className={`${nextProjButton} justify-center ml-auto`}>
-                        <a href={`/projects/${Number(props.projectId) + 1}`}>
-                            <button className="buttonblue text-sm lg:text-4xl md:w-[300px] mb-[20px] px-[20px] mx-[5px] xl:mx-[50px]">Next Project →</button>
-                        </a>
+                        <Link href={`/projects/${Number(props.projectId) + 1}`}>
+                            <button className="buttonblue text-lg w-[170px] h-[50px] mb-[20px] mx-[5px] px-[20px] mt-[20px] sm:w-[250px] sm:text-2xl md:w-[300px] md:text-3xl lg:text-4xl xl:w-[400px] xl:h-[100px] xl:text-5xl xl:mx-[50px]">Next Project →</button>
+                        </Link>
                     </div>
                 </div>
 
-
-                <div className='flex justify-center xl:justify-start'>
-                    <a href="/projects">
-                        <button className="buttonblue md:w-[500px] px-[30px] mb-[20px] mx-[5px] xl:mx-[50px]">← Projects</button>
-                    </a>
+                <div className='flex justify-center items-center'>
+                    <Link href="/projects">
+                        <button className="buttonblue w-[300px] p-[10px] mt-[20px] text-3xl md:w-[500px] md:text-5xl">← Projects</button>
+                    </Link>
                 </div>
 
             </div>
