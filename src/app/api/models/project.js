@@ -10,8 +10,8 @@ const projectSchema = new Schema(
         projectTech: Array,
         projectImages: Array
     }
-
 )
+
 
 //Checks if Project model already exists, if not then create it
 const Project = mongoose.models.Project || mongoose.model("Project", projectSchema)

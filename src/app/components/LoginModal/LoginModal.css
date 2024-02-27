@@ -6,7 +6,7 @@
 }
 
 .navbarTab:hover {
-    background-color: rgb(134 239 172);
+    opacity: 60%;
 }
 
 #loginTab {
