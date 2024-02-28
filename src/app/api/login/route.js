@@ -5,23 +5,24 @@ import { NextResponse } from "next/server";
 
 
 export async function POST(req) {
+
     try {
         const body = await req.json();
         await connectMongoDB();
-        console.log(body);
         const user = await Username.findOne({username: body.username})
-
         if (!user) {
-            throw new Error("Details were incorrect");
+            throw Error("Details are incorrect");
         }
+
         return NextResponse.json({ user });
 
     } catch (error) {
         const res = {
             message: "Error Occurred in login route",
-            error: error
+            error: error.message
         }
-        return NextResponse.json(res)
+
+        return NextResponse.json(res);
     }
 
 }

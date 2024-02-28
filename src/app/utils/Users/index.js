@@ -1,0 +1,43 @@
+export const login = async (username, password) => {
+    try {
+        const response = await fetch(`http://localhost:3000/api/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username: username
+            })
+        })
+
+
+        const data = await response.json();
+        if (data.error) {
+            return (data);
+        }
+        return (data)
+
+    } catch (error) {
+        console.log("ERROR: ", error);
+        return error;
+    }
+}
+
+export const register = async (username, password) => {
+    try {
+        const response = await fetch(`http://localhost:3000/api/register`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username: username,
+                password: password,
+            })
+        })
+
+        const data = await response.json();
+
+        return (data);
+
+    } catch (error) {
+        console.log("Error in utils/users/register: ", error);
+        return error;
+    }
+}

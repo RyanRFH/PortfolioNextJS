@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       <Link href="/projects">
-        <button className="buttonblue w-[400px] h-[70px] mt-[40px] text-5xl">My Projects</button>
+        <button className="buttonblue w-[300px] h-[70px] my-[20px] text-5xl">My Projects</button>
       </Link>
 
 

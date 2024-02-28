@@ -2,33 +2,41 @@ import { connect } from "mongoose";
 import connectMongoDB from "../libs/db";
 import Username from "../models/user";
 import { NextResponse } from "next/server";
+import {hashPassword} from "../middleware/middleware";
 
 export async function POST(req) {
-    try {
-        const body = await req.json()
-        await connectMongoDB()
-        await Username.insertMany(body.usernames)
 
-        return new NextResponse('OK')
-    } catch (error) {
-        const res = {
-            message: "Error Occurred in register route",
-            error: error
+    let user = await req.json();
+
+    //Middleware
+    let hashedUser = await hashPassword(user);
+
+    try {
+        await connectMongoDB()
+
+        let doesUsernameAlreadyExist = await Username.findOne({username: hashedUser.username})
+
+        if (doesUsernameAlreadyExist) {
+            
+            console.log("User already exists");
+            return NextResponse.json({
+                status: false,
+                error: "Username already exists",
+            });
         }
-        return NextResponse.json(res)
+
+        await Username.create(hashedUser);
+        console.log("User created");
+
+        return NextResponse.json({
+            status: true,
+            error: "User created successfully",
+        });
+    } catch (error) {
+        console.log(error);
+        return NextResponse.json({
+            message: "Error occurred in register route",
+            error: error.message
+        });
     }
 }
-
-// export async function GET(req) {
-//     try {
-//         await connectMongoDB()
-//         const projects = await Project.find({})
-//         return NextResponse.json(projects)
-//     } catch (error) {
-//         const res = {
-//             message: "Error Occurred",
-//             error: error
-//         }
-//         return NextResponse.json(res)
-//     }
-// }

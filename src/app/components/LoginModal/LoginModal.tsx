@@ -70,7 +70,7 @@ const LoginModal = () => {
                 <img src={loginTabIcon.src} alt='loginTabIcon' className='w-[25px] bg-white rounded-lg' />
             </button>
 
-            <div ref={loginModalEle} id='loginModal' className={`fixed bg-green-300  rounded-xl border-black border-2 min-h-[350px] pointer-events-auto`}>
+            <div ref={loginModalEle} id='loginModal' className={`fixed bg-green-300  rounded-xl border-black border-2 w-[280px] min-h-[350px] pointer-events-auto`}>
                 <div className='flex justify-evenly w-full min-h-[50px] border-green-500'>
 
                     <button onClick={() => { setSelectedTab("Login") }} className={`navbarTab border-black rounded-tl-xl ${selectedTab === "Login" ? "bg-green-300" : "bg-green-200"}`}>

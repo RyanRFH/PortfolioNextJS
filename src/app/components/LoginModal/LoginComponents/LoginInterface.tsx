@@ -1,10 +1,13 @@
 import React, { FormEventHandler, use, useEffect, useState } from 'react';
 import "../LoginModal.css";
+import {login, register} from "../../../utils/Users"
+
 import hidePasswordIcon from "../LoginModalAssets/hidepassicon.webp";
 import showPasswordIcon from "../LoginModalAssets/showpassicon.png";
 import closeLoginWindowIcon from "../LoginModalAssets/closeloginwindowicon.png";
 
 const LoginInterface = (props) => {
+
     let [hidePass, setHidePass] = useState(true);
 
     let [username, setUsername] = useState("");
@@ -13,25 +16,50 @@ const LoginInterface = (props) => {
     let [status, setStatus] = useState("");
 
     //Form submit handler
-    let formSubmitHandler = (event: any) => {
-
+    let formSubmitHandler = async (event: any) => {
         setStatus("Logging in...");
 
         //Check which type of form is being used (login or register), and submit data using its respective function
         if (props.interfaceType === "Login") {
             event.preventDefault();
+            setStatus("Logging in...");
 
-            console.log("from login function", username);
-            console.log(password);
-            console.log(event);
-            setStatus("Logged in");
+            //Call to login utility
+            let loginRes = await login(username, password);
+
+            console.log(loginRes);
+
+            if (loginRes.user) {
+                //Login successful
+                setStatus("Logged in");
+            } else if (loginRes.error) {
+                //Login unsuccessful
+                setStatus("Login details incorrect");
+            } else {
+                //Error catch
+                setStatus("An error occurred");
+            }
+            return;
+
         } else if (props.interfaceType === "Register") {
             event.preventDefault();
+            setStatus("Registering account...");
 
-            console.log("from register function", username);
-            console.log(password);
-            console.log(event);
-            setStatus("Account registered");
+            //Call to login utility
+            let registerRes = await register(username, password);
+
+            if (registerRes.status === true) {
+                //Login successful
+                setStatus("Account registered");
+            } else if (registerRes.status === false) {
+                //Login unsuccessful
+                setStatus(registerRes.error);
+            } else {
+                //Error catch
+                throw new Error("An error occurred in LoginInterface at register");
+            }
+            
+            return;
         } else {
             event.preventDefault();
             console.log(`"${props.interfaceType}" is not a valid interfaceType. In formSubmitHandler in LoginInterface.`);
