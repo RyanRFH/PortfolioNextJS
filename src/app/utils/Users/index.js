@@ -1,6 +1,8 @@
+'use server'
+
 export const login = async (username, password) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/login`, {
+        const response = await fetch(`${process.env.API_URL}api/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -8,8 +10,9 @@ export const login = async (username, password) => {
             })
         })
 
-
         const data = await response.json();
+
+        data.password = "";
         if (data.error) {
             return (data);
         }
@@ -23,7 +26,7 @@ export const login = async (username, password) => {
 
 export const register = async (username, password) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/register`, {
+        const response = await fetch(`${process.env.API_URL}api/register`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

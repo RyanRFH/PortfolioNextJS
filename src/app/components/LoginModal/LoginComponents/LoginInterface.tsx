@@ -27,8 +27,6 @@ const LoginInterface = (props) => {
             //Call to login utility
             let loginRes = await login(username, password);
 
-            console.log(loginRes);
-
             if (loginRes.user) {
                 //Login successful
                 setStatus("Logged in");
