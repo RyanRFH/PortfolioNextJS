@@ -1,6 +1,8 @@
 import React, { FormEventHandler, use, useEffect, useState } from 'react';
 import "../LoginModal.css";
 import {login, register} from "../../../utils/Users"
+import {writeCookie} from "../../../common/index"
+
 
 import hidePasswordIcon from "../LoginModalAssets/hidepassicon.webp";
 import showPasswordIcon from "../LoginModalAssets/showpassicon.png";
@@ -24,18 +26,24 @@ const LoginInterface = (props) => {
             event.preventDefault();
             setStatus("Logging in...");
 
-            //Call to login utility
+            //Call to login utility, receive res with jwt inside
             let loginRes = await login(username, password);
 
-            if (loginRes.user) {
+            console.log(loginRes)
+
+            if (loginRes.status === true) {
                 //Login successful
                 setStatus("Logged in");
-            } else if (loginRes.error) {
+                
+                //Create cookie
+                writeCookie("jwt-token", loginRes.token, 7);
+            } else if (loginRes.status === false) {
                 //Login unsuccessful
-                setStatus("Login details incorrect");
+                setStatus(loginRes.error);
             } else {
                 //Error catch
-                setStatus("An error occurred");
+                setStatus(loginRes.error);
+                throw new Error("An error occurred in LoginInterface at login");
             }
             return;
 
@@ -54,6 +62,7 @@ const LoginInterface = (props) => {
                 setStatus(registerRes.error);
             } else {
                 //Error catch
+                setStatus("An error occurred");
                 throw new Error("An error occurred in LoginInterface at register");
             }
             

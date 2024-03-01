@@ -6,20 +6,18 @@ export const login = async (username, password) => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                username: username
+                username: username,
+                password: password,
             })
         })
 
         const data = await response.json();
+        console.log("data in utils = ", data)
 
-        data.password = "";
-        if (data.error) {
-            return (data);
-        }
         return (data)
 
     } catch (error) {
-        console.log("ERROR: ", error);
+        console.log("Error in utils/users/login: ", error);
         return error;
     }
 }

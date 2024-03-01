@@ -17,7 +17,6 @@ export async function POST(req) {
         let doesUsernameAlreadyExist = await Username.findOne({username: hashedUser.username});
 
         if (doesUsernameAlreadyExist) {
-            console.log("User already exists");
             return NextResponse.json({
                 status: false,
                 error: "Username already exists",
@@ -25,7 +24,6 @@ export async function POST(req) {
         }
 
         await Username.create(hashedUser);
-        console.log("User created");
 
         return NextResponse.json({
             status: true,
@@ -33,7 +31,6 @@ export async function POST(req) {
         });
 
     } catch (error) {
-        console.log(error);
         return NextResponse.json({
             status: false,
             error: error.message

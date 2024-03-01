@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ProjectBlock from "../../components/ProjectBlock";
 import Link from 'next/link';
 
@@ -39,7 +38,6 @@ async function getProjects() {
 const ProjectDetails = async ({ params }) => {
     const id = params.id
     const projectData = await getProject(id)
-    console.log("data = ", projectData)
     const projects = await getProjects()
 
     const projectCount = projects.length

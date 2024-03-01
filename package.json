@@ -15,6 +15,7 @@
     "flowbite": "^2.2.1",
     "flowbite-react": "^0.7.2",
     "json-server": "^1.0.0-alpha.23",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.1",
     "next": "14.1.0",
