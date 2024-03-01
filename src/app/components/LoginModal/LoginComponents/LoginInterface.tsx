@@ -68,7 +68,7 @@ const LoginInterface = (props) => {
     return (
         <div className='h-full'>
 
-            <div className='w-full flex items-center justify-center flex-col'>
+            <div className='w-full flex items-center justify-center flex-col mt-[10px]'>
                 <button onClick={(event) => { props.setLoginModal("closed"); event.preventDefault(); }} className='absolute left-0 ml-[10px]'>
                     <img src={closeLoginWindowIcon.src} className=' w-[25px]' alt='closeloginwindowicon' />
                 </button>

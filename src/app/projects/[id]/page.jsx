@@ -39,6 +39,7 @@ async function getProjects() {
 const ProjectDetails = async ({ params }) => {
     const id = params.id
     const projectData = await getProject(id)
+    console.log("data = ", projectData)
     const projects = await getProjects()
 
     const projectCount = projects.length
@@ -46,11 +47,11 @@ const ProjectDetails = async ({ params }) => {
     return (
 
         <div className="">
-            {!projectData?.id ?
+            {!projectData?._id ?
                 <div className='flex items-center justify-center mt-[200px] flex-col'>
                     <p className='text-6xl font-bebas'>PROJECT NOT FOUND</p>
                     <Link href='/projects'>
-                        <button className='buttonblue'>
+                        <button className='buttonblue w-[200px] h-[30px]'>
                             Projects
                         </button>
                     </Link>

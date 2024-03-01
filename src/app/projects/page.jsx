@@ -32,7 +32,7 @@ const page = async () => {
     } else if (projects.error) {
         //Triggers an error if there is an error key in the data object
         projectsErrorFlag = "getProjects() encountered an error"
-    } else if (!projects[0]?.id) {
+    } else if (!projects[0]?._id) {
         //Triggers an error if the first element in the data doesn't contain an ID (bad data)
         projectsErrorFlag = "getProjects() returned bad data"
     }
@@ -53,7 +53,7 @@ const page = async () => {
                     projects.map((project, index) => {
                         return (
                             <div key={index}>
-                                <ProjectThumbnail projDesc={project.projectDesc} projName={project.projectName} projImg={project.projectImages[0].url} projLink={`/projects/${project.id}`} />
+                                <ProjectThumbnail projDesc={project.projectDesc} projName={project.projectName} projImg={project.projectImages[0].url} projLink={`/projects/${project._id}`} />
                             </div>
 
                         )

@@ -12,12 +12,11 @@ export async function POST(req) {
     let hashedUser = await hashPassword(user);
 
     try {
-        await connectMongoDB()
+        await connectMongoDB();
 
-        let doesUsernameAlreadyExist = await Username.findOne({username: hashedUser.username})
+        let doesUsernameAlreadyExist = await Username.findOne({username: hashedUser.username});
 
         if (doesUsernameAlreadyExist) {
-            
             console.log("User already exists");
             return NextResponse.json({
                 status: false,
@@ -32,10 +31,11 @@ export async function POST(req) {
             status: true,
             error: "User created successfully",
         });
+
     } catch (error) {
         console.log(error);
         return NextResponse.json({
-            message: "Error occurred in register route",
+            status: false,
             error: error.message
         });
     }

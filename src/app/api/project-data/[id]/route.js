@@ -8,7 +8,7 @@ export async function GET(req, {params}) {
     try {
         const projId = await params.id
         await connectMongoDB()
-        const project = await Project.findOne({id: projId})
+        const project = await Project.findOne({_id: projId})
         if (!project) {
             throw new Error("Project not found")
         }
