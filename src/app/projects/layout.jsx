@@ -7,11 +7,11 @@ import React, { useEffect } from 'react';
 
 const layout = ({ children }) => {
 
-    useEffect(() => {
-        // const cookieStore = cookies();
-        // console.log(cookieStore)
-        // getUser();
-    }, []);
+    // useEffect(() => {
+    //     const cookieStore = cookies();
+    //     console.log(cookieStore)
+    //     getUser();
+    // }, []);
 
     return (
         <div>
