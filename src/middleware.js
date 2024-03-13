@@ -7,10 +7,15 @@ import { NextResponse } from "next/server"
 
 export const middleware = (req) => {
     // return NextResponse.redirect('http://localhost:3000/projects'); //Send response directly from middleware, skipping next() api call
+
+
+
+
+
     return NextResponse.next(); // Pass control to the next middleware or route handler
 }
 
-//All middleware wil only run on this route
+//All middleware wil only run on these routes
 export const config = {
-    matcher: ['/api/login']
+    matcher: ['/']
 }

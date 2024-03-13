@@ -1,7 +1,7 @@
 import React, { FormEventHandler, use, useEffect, useState } from 'react';
 import "../LoginModal.css";
-import {login, register} from "../../../utils/Users"
-import {writeCookie} from "../../../common/index"
+import { login, register } from "../../../utils/Users"
+import { writeCookie } from "../../../common/index"
 
 
 import hidePasswordIcon from "../LoginModalAssets/hidepassicon.webp";
@@ -29,14 +29,14 @@ const LoginInterface = (props) => {
             //Call to login utility, receive res with jwt inside
             let loginRes = await login(username, password);
 
-            console.log(loginRes)
-
             if (loginRes.status === true) {
                 //Login successful
                 setStatus("Logged in");
-                
+
                 //Create cookie
                 writeCookie("jwt-token", loginRes.token, 7);
+
+                props.setSelectedTabState("LoggedIn");
             } else if (loginRes.status === false) {
                 //Login unsuccessful
                 setStatus(loginRes.error);
@@ -65,7 +65,7 @@ const LoginInterface = (props) => {
                 setStatus("An error occurred");
                 throw new Error("An error occurred in LoginInterface at register");
             }
-            
+
             return;
         } else {
             event.preventDefault();
@@ -77,15 +77,15 @@ const LoginInterface = (props) => {
     return (
         <div className='h-full'>
 
-            <div className='w-full flex items-center justify-center flex-col mt-[10px]'>
-                <button onClick={(event) => { props.setLoginModal("closed"); event.preventDefault(); }} className='absolute left-0 ml-[10px]'>
+            <div className='w-full flex items-center justify-center flex-col mt-[0px]'>
+                {/* <button onClick={(event) => { props.setLoginModal("closed"); event.preventDefault(); }} className='absolute left-0 ml-[10px]'>
                     <img src={closeLoginWindowIcon.src} className=' w-[25px]' alt='closeloginwindowicon' />
-                </button>
+                </button> */}
                 <h1 className='text-3xl'>{props.interfaceType}</h1>
                 <p>(In Development)</p>
             </div>
 
-            <form onSubmit={formSubmitHandler} className='flex flex-col items-center h-3/4'>
+            <form onSubmit={formSubmitHandler} className='flex flex-col items-center'>
 
                 <div className='flex flex-col items-center mt-[5px]'>
                     <label className='flex flex-col items-center'>

@@ -2,7 +2,7 @@ import { connect } from "mongoose";
 import connectMongoDB from "../libs/db";
 import Username from "../models/user";
 import { NextResponse } from "next/server";
-import {hashPassword} from "../middleware/middleware";
+import { hashPassword } from "../middleware/middleware";
 
 export async function POST(req) {
 
@@ -14,7 +14,7 @@ export async function POST(req) {
     try {
         await connectMongoDB();
 
-        let doesUsernameAlreadyExist = await Username.findOne({username: hashedUser.username});
+        let doesUsernameAlreadyExist = await Username.findOne({ username: hashedUser.username });
 
         if (doesUsernameAlreadyExist) {
             return NextResponse.json({
@@ -35,5 +35,6 @@ export async function POST(req) {
             status: false,
             error: error.message
         });
+
     }
 }

@@ -2,15 +2,14 @@ import { connect } from "mongoose";
 import connectMongoDB from "../libs/db";
 import Username from "../models/user";
 import { NextResponse } from "next/server";
-const jwt = require ("jsonwebtoken")
+const jwt = require("jsonwebtoken")
 const bcrypt = require('bcrypt');
 
 export async function POST(req) {
-
     try {
         const body = await req.json();
         await connectMongoDB();
-        const user = await Username.findOne({username: body.username})
+        const user = await Username.findOne({ username: body.username })
         //Check is user is found
         if (!user) {
             throw Error("Details are incorrect");
@@ -22,7 +21,7 @@ export async function POST(req) {
             throw Error("Details are incorrect");
         }
 
-        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET_KEY);
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY);
 
 
         return NextResponse.json({

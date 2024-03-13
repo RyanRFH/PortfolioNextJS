@@ -8,6 +8,7 @@
 body {
   background: #ebf0fa;
   /* @apply text-white */
+  @apply font-ubuntu
 }
 
 .buttonblue {

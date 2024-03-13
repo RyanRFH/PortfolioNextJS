@@ -1,3 +1,5 @@
+// 'use client'
+
 import React from 'react';
 import ProjectBlock from "../../components/ProjectBlock";
 import Link from 'next/link';
@@ -5,7 +7,7 @@ import Link from 'next/link';
 async function getProject(id) {
     try {
         //Object argument sets data revalidation time in seconds
-        const res = await fetch(`${process.env.API_URL}api/project-data/${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/project-data/${id}`, {
             method: "GET",
             next: {
                 revalidate: 0 //Using 0 opts our of using cache
@@ -22,7 +24,7 @@ async function getProject(id) {
 
 async function getProjects() {
     //Object argument sets data revalidation time in seconds
-    const res = await fetch(`${process.env.API_URL}api/projects-data`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/projects-data`, {
         method: "GET",
         next: {
             revalidate: 0 //Using 0 opts our of using cache

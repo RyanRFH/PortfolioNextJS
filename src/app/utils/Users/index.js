@@ -2,7 +2,7 @@
 
 export const login = async (username, password) => {
     try {
-        const response = await fetch(`${process.env.API_URL}api/login`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -12,7 +12,6 @@ export const login = async (username, password) => {
         })
 
         const data = await response.json();
-        console.log("data in utils = ", data)
 
         return (data)
 
@@ -24,7 +23,7 @@ export const login = async (username, password) => {
 
 export const register = async (username, password) => {
     try {
-        const response = await fetch(`${process.env.API_URL}api/register`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/register`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -41,4 +40,24 @@ export const register = async (username, password) => {
         console.log("Error in utils/users/register: ", error);
         return error;
     }
+}
+
+export async function getUser() {
+    //Next object argument sets data revalidation time in seconds
+    try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/auth`, {
+            method: "GET",
+            next: {
+                revalidate: 0 //Using 0 opts our of using cache
+            }
+        })
+
+        const data = await res.json()
+        return data
+    } catch (error) {
+        const errorMessage = "error in getUser()"
+        console.log(errorMessage)
+        return { error: errorMessage }
+    }
+
 }

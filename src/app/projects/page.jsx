@@ -5,12 +5,13 @@ import { NextResponse } from 'next/server';
 async function getProjects() {
     //Next object argument sets data revalidation time in seconds
     try {
-        const res = await fetch(`${process.env.API_URL}api/projects-data`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/projects-data`, {
             method: "GET",
             next: {
                 revalidate: 0 //Using 0 opts our of using cache
             }
         })
+
         const data = await res.json()
         return data
     } catch (error) {
@@ -23,6 +24,18 @@ async function getProjects() {
 
 const page = async () => {
     const projects = await getProjects()
+
+    //Sort projects by ID
+    function compare(a, b) {
+        if (a._id < b._id) {
+            return -1;
+        }
+        if (a._id > b._id) {
+            return 1;
+        }
+        return 0;
+    }
+    projects.sort(compare);
 
     //Error handling
     let projectsErrorFlag = ""

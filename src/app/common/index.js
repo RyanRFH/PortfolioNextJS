@@ -7,16 +7,16 @@ export const writeCookie = (key, value, days) => {
     return cookie;
 }
 
-export const getCookie = (cookieName) => {
-    const re = new RegExp(`(?<=${cookieName}=)[^;]*`)
+// export const getCookie = (cookieName) => {
+//     const re = new RegExp(`(?<=${cookieName}=)[^;]*`)
 
-    try {
-        let cookie = document.cookie.match(re)[0]
-        return cookie
-    } catch (error) {
-        return false
-    }
-}
+//     try {
+//         let cookie = document.cookie.match(re)[0]
+//         return cookie
+//     } catch (error) {
+//         return false
+//     }
+// }
 
 export const deleteCookie = (cookieName) => {
     try {
