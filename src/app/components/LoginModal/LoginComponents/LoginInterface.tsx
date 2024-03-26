@@ -82,7 +82,6 @@ const LoginInterface = (props) => {
                     <img src={closeLoginWindowIcon.src} className=' w-[25px]' alt='closeloginwindowicon' />
                 </button> */}
                 <h1 className='text-3xl'>{props.interfaceType}</h1>
-                <p>(In Development)</p>
             </div>
 
             <form onSubmit={formSubmitHandler} className='flex flex-col items-center'>
@@ -110,7 +109,7 @@ const LoginInterface = (props) => {
                     </label>
 
                 </div>
-                <input type='submit' value={"Login"} className='bg-white w-[100px] border-black border-[1px] mt-[10px]'></input>
+                <input type='submit' value={props.interfaceType} className='bg-white w-[100px] border-black border-[1px] mt-[10px]'></input>
             </form>
             <div className='flex items-center justify-center mt-[10px]'>
                 <p className="flex items-center justify-center">{status}</p>

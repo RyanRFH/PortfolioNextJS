@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <head>
       </head>
       <body className="flex flex-col min-h-screen">
-        <LoginModal />
+        {/* <LoginModal /> */}
         <Navbar />
         {children}
         <Footer />
