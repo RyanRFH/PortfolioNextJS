@@ -19,7 +19,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 bg-gray-300 mt-[10px] h-[40px]">
             <p className="ml-[10px]">Tech Stack :</p>
-            <p>React, Node, MongoDB, Express</p>
+            <p>ReactJS, .NET</p>
           </div>
 
         </div>
