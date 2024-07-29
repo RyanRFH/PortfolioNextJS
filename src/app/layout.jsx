@@ -1,5 +1,6 @@
 import { Rubik } from "next/font/google";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/react';
 
 //Components
 import Navbar from "./components/Navbar";
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
 
 
       </body>
