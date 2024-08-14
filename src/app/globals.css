@@ -12,5 +12,5 @@ body {
 }
 
 .buttonblue {
-  @apply hover:text-blue-600 bg-blue-500 font-bebas rounded-2xl text-blue-100;
+  @apply hover:bg-blue-600 bg-blue-500 font-bebas rounded-2xl text-blue-100;
 }

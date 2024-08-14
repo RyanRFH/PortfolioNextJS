@@ -26,8 +26,11 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/middleware.js", "src/app/api/middleware/middleware.js"  ],
+    "**/*.tsx",
+    "src/middleware.js",
+    "src/app/api/middleware/middleware.js",
+    "src/app/messagereceived/page.jsx"
+  ],
   "exclude": [
     "node_modules"
   ]

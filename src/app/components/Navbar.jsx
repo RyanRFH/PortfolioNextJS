@@ -12,6 +12,7 @@ const Navbar = () => {
             <div className='flex items-center justify-evenly text-2xl lg:text-6xl text-blue-600'>
                 <Link className='hover:text-blue-200' href='/'>Home</Link>
                 <Link className='hover:text-blue-200' href='/projects'>Projects</Link>
+                <Link className='hover:text-blue-200' href='/message'>Message</Link>
             </div>
 
         </div>
