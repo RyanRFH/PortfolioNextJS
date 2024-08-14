@@ -14,7 +14,7 @@ const page = async () => {
                     <input type="email" name="email" required />
                     <p className='mt-[10px]'>Message</p>
                     <textarea name="message" required></textarea>
-                    <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+                    <input type="hidden" name="redirect" value="https://ryanfoster-hill-portfolio.vercel.app/messagereceived" />
                     <button className='buttonblue mt-[10px] h-[40px] text-2xl' type="submit">Send Message</button>
                 </form>
             </div>
