@@ -1,7 +1,7 @@
 'use client' //Component must be a client component for Material-tailwind addon to work
 
 //Block for displaying projects on project page
-import { Carousel } from '@material-tailwind/react';
+import { Carousel, IconButton } from '@material-tailwind/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -33,7 +33,59 @@ const ProjectBlock = (props) => {
                 </div>
 
                 <div className='flex items-center justify-center mt-[20px]'>
-                    <Carousel className='max-w-[1200px]'>
+                    <Carousel
+                        className='max-w-[1200px]'
+                        prevArrow={({ handlePrev }) => (
+                            <IconButton
+                                variant="text"
+                                color="black"
+                                size="lg"
+                                onClick={handlePrev}
+                                className="!absolute top-2/4 left-4 -translate-y-2/4"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={5}
+                                    stroke="currentColor"
+                                    className="h-6 w-6"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                                    />
+                                </svg>
+                            </IconButton>
+                        )}
+
+                        nextArrow={({ handleNext }) => (
+                            <IconButton
+                                variant="text"
+                                color="black"
+                                size="lg"
+                                onClick={handleNext}
+                                className="!absolute top-2/4 !right-4 -translate-y-2/4"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={5}
+                                    stroke="currentColor"
+                                    className="h-6 w-6"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                                    />
+                                </svg>
+                            </IconButton>
+                        )}
+                    >
+
                         {props.projectImages.map((image, index) => {
                             return (
                                 <img className='rounded-3xl m-auto' key={index} src={image.url} alt={image.alt} />

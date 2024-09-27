@@ -14,3 +14,21 @@ body {
 .buttonblue {
   @apply hover:bg-blue-600 bg-blue-500 font-bebas rounded-2xl text-blue-100;
 }
+
+.buttonblue:active {
+  @apply text-gray-600;
+}
+
+.navBarLinks {
+  @apply hover:text-blue-200;
+}
+
+.navBarLinks:active {
+  @apply text-gray-600;
+}
+
+.projectThumb {}
+
+.projectThumb:active {
+  @apply text-gray-300;
+}
