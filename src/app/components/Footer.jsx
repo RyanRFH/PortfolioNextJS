@@ -8,7 +8,7 @@ const Footer = () => {
             <div className='flex justify-around font-ubuntu font-bold text-sm flex-col lg:flex-row ml-[10px] lg:text-2xl'>
                 <div className='flex'>
                     <p className='mr-[10px]'>Phone:</p>
-                    <Link href='tel:07504666904' className='hover:text-blue-200'>07504 666904</Link>
+                    <Link href='tel:07504666904' className='hover:text-blue-200'></Link>
                 </div>
                 <div className='flex'>
                 <p className='mr-[10px]'>Email:</p>
